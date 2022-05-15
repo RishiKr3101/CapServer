@@ -9,7 +9,6 @@ asttokens==2.0.5
 astunparse==1.6.3
 async-timeout==3.0.1
 attrs==20.3.0
-autopy==4.0.0
 backcall==0.2.0
 bcrypt==3.1.7
 beautifulsoup4==4.9.3
