@@ -22,7 +22,7 @@ def home(request):
 @api_view(['GET'])
 def response(request):
     
-    if not(SurveyResponse.objects.exists()):
+    if not(SurveyResponse.objects.count()>0):
         return Response('Nothing to show')
     responses_api= SurveyResponse.objects.values("Data")
     print(responses_api[0]["Data"])
