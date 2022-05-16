@@ -22,6 +22,8 @@ def home(request):
 @api_view(['GET'])
 def response(request):
     responses_api= SurveyResponse.objects.values("Data")
+    if not(responses_api):
+        return Response('Nothing to show')
     print(responses_api[0]["Data"])
     count=0
     res=""
@@ -39,8 +41,7 @@ def response(request):
     
 
 
-    if not(responses_api):
-        return Response('Nothing to show')
+    
     serializer= SurveyResponsesSerializer(responses_api, many=False)
     return Response(json.loads(res))
         
