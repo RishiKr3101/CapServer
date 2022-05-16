@@ -21,8 +21,8 @@ def home(request):
 
 @api_view(['GET'])
 def response(request):
-    responses= SurveyResponse.objects.all()
-    if not(responses.exists()):
+    
+    if not(SurveyResponse.objects.exists()):
         return Response('Nothing to show')
     responses_api= SurveyResponse.objects.values("Data")
     print(responses_api[0]["Data"])
